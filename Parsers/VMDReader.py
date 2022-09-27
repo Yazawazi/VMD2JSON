@@ -98,7 +98,7 @@ class VMDReader:
                 "Y": FloatHelper.bytesToFloat(self.readBytes(4)),
                 "Z": FloatHelper.bytesToFloat(self.readBytes(4))
             },
-            "Curve": list(struct.unpack("!24s", self.readBytes(24))[0]),
+            "Curve": list(struct.unpack("<4s", self.readByteSkipByte(4, 20))[0]),
             "ViewAngle": int.from_bytes(self.readBytes(4), byteorder = "little", signed = False),
             "Orthographic": int.from_bytes(self.readBytes(1), byteorder = "little", signed = False),
         }
