@@ -7,7 +7,7 @@ class FloatHelper:
 
     @staticmethod
     def bytesToFloat(byteArray):
-        result = struct.unpack("!f", byteArray)[0]
+        result = struct.unpack("<f", byteArray)[0]
         if result == float("NaN"):
             result = 0.0
         return result
