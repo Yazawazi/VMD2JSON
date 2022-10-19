@@ -13,6 +13,6 @@ else:
     outputFile = sys.argv[2]
     vmdReader = VMDReader(vmdFile)
     Log.log("info", "Writing to file: " + outputFile)
-    with open(outputFile, "w") as f:
+    with open(outputFile, "w", encoding = "utf-8") as f:
         json.dump(vmdReader.read(), f, ensure_ascii = False, indent = 4)
     Log.log("info", "Conversion finished.")
